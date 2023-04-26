@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+// import './service/axios_demo';
+import hyRequest from './service';
 
 import router from './router';
 import store from './store';
@@ -11,3 +13,7 @@ app.use(router);
 app.use(store);
 app.use(ElementPlus);
 app.mount('#app');
+hyRequest.request({
+    url: 'x/web-interface/nav',
+    method: 'GET'
+});
